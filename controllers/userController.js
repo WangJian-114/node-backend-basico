@@ -97,7 +97,13 @@ const usuariosPatch = (req, res = response) => {
 
 const usuariosDelete = async (req, res = response) => {
 
+    // id del usuario que se va a eliminar
     const { id } = req.params;
+
+
+    //usuario que esta realizando la operacion
+   
+    usuarioAutenticado =req.usuarioAutenticado;
 
     // Borrar Fisicamente
     // No se recomienda
@@ -111,7 +117,9 @@ const usuariosDelete = async (req, res = response) => {
     // console.log(req.params);
     // console.log(req.params.id);
     res.json({
-        msg:`Usuario con el ID: ${id} fue eliminado `,
+        msg:`Usuario con el ID: ${id} fue eliminado`,
+        usuarioAutenticado,
+        
         usuario
     });
 };

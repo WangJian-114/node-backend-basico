@@ -46,7 +46,8 @@ const UserSchema = moongose.Schema({
 // Tiene que ser una funcion normal
 UserSchema.methods.toJSON = function() {
     // Sacando la v y password , dejando todo los de mas
-    const { __v, password, ...user } = this.toObject();
+    const { __v, password, _id, ...user } = this.toObject();
+    user.uid = _id;
     return user;
 }
 
