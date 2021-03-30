@@ -28,6 +28,7 @@ const UserSchema = moongose.Schema({
     rol: {
         type: String,
         required: true,
+        default: 'USER_ROLE',
         emun: ['ADMIN_ROLE', 'USER_ROLE']
     },
 

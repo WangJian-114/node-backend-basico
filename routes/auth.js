@@ -5,7 +5,7 @@ const { validarCampos } = require('../middlewares/validar-campos');
 const { esRoleValido, emailExiste, existeUsuario }= require('../helpers/db-validators');
 
 const { 
-        login
+        login, googleSignin
       } = require('../controllers/authController');
 
 const router = Router();
@@ -19,6 +19,11 @@ router.post('/login', [
         validarCampos 
     ], login);
 
+
+router.post('/google', [
+        check('id_token','El id token es obligatorio').not().isEmpty(),
+        validarCampos
+], googleSignin);
 
 
 
