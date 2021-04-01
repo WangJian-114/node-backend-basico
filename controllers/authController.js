@@ -64,6 +64,7 @@ const googleSignin = async (req = request, res = response) => {
 
     const googleUser = await googleVerify(id_token);
     
+    console.log(id_token);
 
     try {
 
@@ -105,7 +106,9 @@ const googleSignin = async (req = request, res = response) => {
     } catch (error) {
         console.log(error);
         res.status(400).json({
-            msg:'Token de Google no es valido'
+            msg:'Token de Google no es valido',
+            googleUser,
+            id_token
         });
     }
     
