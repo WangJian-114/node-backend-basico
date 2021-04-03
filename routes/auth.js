@@ -2,7 +2,7 @@ const { Router } = require('express');
 
 const { check } = require('express-validator');
 const { validarCampos } = require('../middlewares/validar-campos');
-const { esRoleValido, emailExiste, existeUsuario }= require('../helpers/db-validators');
+// const { esRoleValido, emailExiste, existeUsuario }= require('../helpers/db-validators');
 
 const { 
         login, googleSignin

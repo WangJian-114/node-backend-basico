@@ -1,5 +1,5 @@
 const { response, request } = require('express');
-const User = require('../models/User');
+const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 
 
@@ -16,7 +16,6 @@ const validarJWT = async (req = request, res = response, next) => {
     try {
 
         const payload = jwt.verify(token, process.env.SECRETOPRIVATEKEY);
-        console.log(payload);
 
         const { uid } = payload;
 
@@ -39,6 +38,8 @@ const validarJWT = async (req = request, res = response, next) => {
         req.usuarioAutenticado = usuarioAutenticado;
 
         req.uid = uid
+
+        
 
 
         next();
