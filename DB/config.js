@@ -11,7 +11,7 @@ const dbConnection = async () => {
                 useFindAndModify: false
         });
 
-        console.log('DB CONECTADA!');
+        console.log('DB CONECTADA CORRECTAMENTE!');
         
     } catch (error) {
         console.log(error);
